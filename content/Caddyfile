@@ -2,7 +2,7 @@
 @websockets-vl {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-vl*
+        path /ray*
 }
 handle @websockets-vl {
         reverse_proxy * localhost:61079
@@ -10,7 +10,7 @@ handle @websockets-vl {
 @websockets-vm {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-vm*
+        path /app*
 }
 handle @websockets-vm {
         reverse_proxy * localhost:61080
